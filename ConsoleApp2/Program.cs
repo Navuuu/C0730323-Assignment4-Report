@@ -15,10 +15,10 @@ namespace ConsoleApp2
         {
             Program p = new Program();
             p.Beowulf = new ArrayList();
-            p.Wordfinder();
+            p.Wordskipper();
             Console.ReadLine();
         }
-        public void Run() { this.ReadTextFiles();}
+        public void Run() { this.ReadTextFiles(); }
         public void ReadTextFiles()
         {
             using (StreamReader file = new StreamReader("U:/Users/730323//Beowulf.txt"))
@@ -29,12 +29,12 @@ namespace ConsoleApp2
                 {
                     Console.WriteLine(ln);
                     Beowulf.Add(ln);
-                   
-                    
+
+
                 }
                 file.Close();
                 Console.WriteLine($"File has {counter} lines.");
-                Console.WriteLine($"File has {counter*5} Words.");
+                Console.WriteLine($"File has {counter * 5} Words.");
             }
         }
         public void Wordfinder()
@@ -50,17 +50,31 @@ namespace ConsoleApp2
             }
             Console.WriteLine(f);
         }
-        public int FindNumberOfBlankSpaces(string line)
+        public void Wordskipper()
         {
-            int countlettters = 0;
-            int countSpaces = 0;
-            foreach (char c in line)
+            int f = 0;
+            foreach (var line in File.ReadAllLines("U:/Users/730323//Beowulf.txt"))
             {
-                if (char.IsLetter(c)) { countlettters++; }
-                if (char.IsWhiteSpace(c)) { countSpaces++; }
-            }
-            return countSpaces;
-        }
+                f++;
+                if (line.Contains("fare") && (!line.Contains("war")))
+                {
+                    Console.WriteLine(f);
+                }
 
+            }
+        }
+            public int FindNumberOfBlankSpaces(string line)
+            {
+                int countlettters = 0;
+                int countSpaces = 0;
+                foreach (char c in line)
+                {
+                    if (char.IsLetter(c)) { countlettters++; }
+                    if (char.IsWhiteSpace(c)) { countSpaces++; }
+                }
+                return countSpaces;
+            }
+
+        }
     }
-}
+
