@@ -15,11 +15,13 @@ namespace ConsoleApp2
         {
             Program p = new Program();
             p.Beowulf = new ArrayList();
+            p.ReadTextFiles();
+            Console.ReadLine();
         }
         public void Run() { this.ReadTextFiles(); }
         public void ReadTextFiles()
         {
-            using (StreamReader file = new StreamReader("search-ms:displayname=Search%20Results%20in%20Users&crumb=location:U%3A%5CUsers\730323"))
+            using (StreamReader file = new StreamReader("U:/Users/730323//Beowulf.txt"))
             {
                 int counter = 0;
                 string ln;
@@ -27,6 +29,7 @@ namespace ConsoleApp2
                 {
                     Console.WriteLine(ln);
                     Beowulf.Add(ln);
+                    counter++;
                 }
                 file.Close();
                 Console.WriteLine($"File has {counter} lines.");
