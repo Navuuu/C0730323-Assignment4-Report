@@ -15,7 +15,7 @@ namespace ConsoleApp2
         {
             Program p = new Program();
             p.Beowulf = new ArrayList();
-            p.ReadTextFiles();
+            p.Wordfinder();
             Console.ReadLine();
         }
         public void Run() { this.ReadTextFiles();}
@@ -29,12 +29,26 @@ namespace ConsoleApp2
                 {
                     Console.WriteLine(ln);
                     Beowulf.Add(ln);
-                    counter++;
+                   
+                    
                 }
                 file.Close();
                 Console.WriteLine($"File has {counter} lines.");
                 Console.WriteLine($"File has {counter*5} Words.");
             }
+        }
+        public void Wordfinder()
+        {
+            int f = 0;
+            foreach (var line in File.ReadAllLines("U:/Users/730323//Beowulf.txt"))
+            {
+                if (line.Contains("sea") && line.Contains("fare"))
+                {
+                    f++;
+                }
+
+            }
+            Console.WriteLine(f);
         }
         public int FindNumberOfBlankSpaces(string line)
         {
