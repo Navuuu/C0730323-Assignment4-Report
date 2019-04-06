@@ -10,12 +10,12 @@ namespace ConsoleApp2
 {
     class Program
     {
-        ArrayList Beowulf;
+        ArrayList Beowulf; 
         static void Main(string[] args)
         {
             Program p = new Program();
             p.Beowulf = new ArrayList();
-            p.Wordskipper();
+            p.Letters();
             Console.ReadLine();
         }
         public void Run() { this.ReadTextFiles(); }
@@ -75,6 +75,78 @@ namespace ConsoleApp2
                 return countSpaces;
             }
 
+        public void Letters()
+
+        {
+
+
+
+            StreamReader file = new StreamReader("U:/Users/730323//Beowulf.txt");
+
+            string script = file.ReadToEnd();
+
+
+
+            //find number of letters
+
+            int numberOfLetters = 0;
+
+            foreach (char letter in script)
+
+            {
+
+                numberOfLetters++;
+
+            }
+
+            var text = script.Trim();
+
+            int wordCount = 0, index = 0;
+
+
+
+            //find number of words
+
+            while (index < text.Length)
+
+            {
+
+                // check if current char is part of a word
+
+                while (index < text.Length && !char.IsWhiteSpace(text[index]))
+
+                    index++;
+
+
+
+                wordCount++;
+
+
+
+                // skip whitespace until next word
+
+                while (index < text.Length && char.IsWhiteSpace(text[index]))
+
+                    index++;
+
+            }
+
+
+
+            float val2 = (float)numberOfLetters;
+
+            float val1 = (float)wordCount;
+
+
+
+            //find average
+
+            float avrg = val2 / val1;
+
+            Console.WriteLine(avrg);
+
         }
+
+    }
     }
 
