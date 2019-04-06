@@ -18,7 +18,7 @@ namespace ConsoleApp2
             p.ReadTextFiles();
             Console.ReadLine();
         }
-        public void Run() { this.ReadTextFiles(); }
+        public void Run() { this.ReadTextFiles();}
         public void ReadTextFiles()
         {
             using (StreamReader file = new StreamReader("U:/Users/730323//Beowulf.txt"))
