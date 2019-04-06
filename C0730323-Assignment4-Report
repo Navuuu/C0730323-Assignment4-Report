@@ -1,0 +1,17 @@
+How Many lines in total are there in the file?
+4016 Lines.
+
+Section B
+How many words are there in the file?
+
+
+Section C
+Line numbers of the lines which contain both of these words(upper and lower case)?
+
+
+Section D
+Line numbers of the lines which contain the word - Fare, without the word - War?
+
+
+Section E
+Average number of letters per word returned as a float?
